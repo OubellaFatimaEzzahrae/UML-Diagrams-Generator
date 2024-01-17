@@ -8,7 +8,11 @@ import org.mql.java.model.ProjectEntity;
 import org.mql.java.parser.ProjectParser;
 
 public class ConsoleDisplay {
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> 0f448e7f89a57c89256f75690defd548b35ab1f2
 	public ConsoleDisplay() {
 		parserDisplay();
 	}
