@@ -8,13 +8,13 @@ import org.mql.java.model.ProjectEntity;
 import org.mql.java.parser.ProjectParser;
 
 public class ConsoleDisplay {
-s
+
 	public ConsoleDisplay() {
 		parserDisplay();
 	}
 	
 	public void parserDisplay() {
-		ProjectEntity projectE = ProjectParser.parseProject("D:\\mql\\java\\WorkSpace-Home\\Oubella FatimaEzzahrae-UML Diagrams Generator");
+		ProjectEntity projectE = ProjectParser.parseProject("D:\\mql\\java\\WorkSpace-Home\\Test Project");
 		displayProject(projectE);
 	}
 	
