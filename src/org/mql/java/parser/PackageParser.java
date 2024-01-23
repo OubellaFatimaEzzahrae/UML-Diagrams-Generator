@@ -18,16 +18,21 @@ public class PackageParser {
 
 	public static PackageEntity parsePackage(String packageName, String projectPath) {
 	    try {
-	        List<ClassEntity> classes = extractClasses(packageName, projectPath);
-	        return new PackageEntity(packageName, classes);
+	    	PackageEntity pe =new PackageEntity(packageName);
+	    	pe.setAllFiles(extractClasses(packageName, projectPath, pe));
+	        return pe;
 	    } catch (Exception e) {
 	        System.out.println("Error : " + e.getMessage());
 	        return null;
 	    }
 	}
 
-	public static List<ClassEntity> extractClasses(String packageName, String projectPath) {
-	    List<ClassEntity> classEntities = new ArrayList<>();
+	public static List<ClassEntity> extractClasses(String packageName, String projectPath , PackageEntity pe) {
+	    List<ClassEntity> allFiles = new ArrayList<>();
+	    List<ClassEntity> classes = new ArrayList<>();
+	    List<ClassEntity> annotaions = new ArrayList<>();	 
+	    List<ClassEntity> interfaces = new ArrayList<>();
+	    List<ClassEntity> ennumerations = new ArrayList<>();
 
 	    try {
 	        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
@@ -53,12 +58,23 @@ public class PackageParser {
 	                        if (classFiles != null) {
 	                            for (File classFile : classFiles) {
 	                                String className = packageName + '.' + classFile.getName().replace(".class", "");
-
 	                                // Vérifiez si la classe a déjà été ajoutée
 	                                if (classNamesSet.add(className)) {
 	                                    Class<?> clazz = urlClassLoader.loadClass(className);
-	                                    System.out.println(classFile.getAbsolutePath());
-	                                    classEntities.add(ClassParser.parseClass(clazz));
+		                                    if(clazz.isAnnotation()) {
+			                                    annotaions.add(ClassParser.parseClass(clazz));
+			                                    pe.setAnnotations(annotaions);
+		                                    }else if(clazz.isEnum()){
+			                                    ennumerations.add(ClassParser.parseClass(clazz));
+			                                    pe.setEnumerations(ennumerations);
+		                                    }else if (clazz.isInterface()) {
+			                                    interfaces.add(ClassParser.parseClass(clazz));
+			                                    pe.setInterfaces(interfaces);
+		                                    }else{
+			                                    classes.add(ClassParser.parseClass(clazz));
+			                                    pe.setClasses(classes);
+		                            		}
+	                                    	allFiles.add(ClassParser.parseClass(clazz));
 	                                }
 	                            }
 	                        }
@@ -70,7 +86,7 @@ public class PackageParser {
 	        e.printStackTrace();
 	    }
 
-	    return classEntities;
+	    return allFiles;
 	}
 
 	

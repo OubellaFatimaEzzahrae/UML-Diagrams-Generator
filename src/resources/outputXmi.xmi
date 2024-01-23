@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:uml="http://www.omg.org/UML/2.0">
+    <uml:project>
+        <uml:name>Oubella FatimaEzzahrae-UML Diagrams Generator</uml:name>
+        <uml:packages>
+            <uml:Package name="org.mql.java.brouillon">
+                <uml:interfaces>
+                    <uml:interface uml:name="TestInterface">
+                        <uml:fields>
+                            <uml:field uml:modifier="public static final" uml:name="PI" uml:type="double"/>
+                        </uml:fields>
+                        <uml:methods>
+                            <uml:method uml:modifier="public abstract" uml:name="add" uml:return-type="void"/>
+                        </uml:methods>
+                    </uml:interface>
+                </uml:interfaces>
+                <uml:annotations>
+                    <uml:annotation name="annotationTest">
+                        <uml:fields>
+                            <uml:field uml:modifier="public static final" uml:name="param1" uml:type="String"/>
+                        </uml:fields>
+                    </uml:annotation>
+                </uml:annotations>
+            </uml:Package>
+            <uml:Package name="org.mql.java">
+                <uml:classes>
+                    <uml:class uml:name="Test">
+                        <uml:methods>
+                            <uml:method uml:modifier="public static" uml:name="main" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="String[]"/>
+                                </uml:parameters>
+                            </uml:method>
+                        </uml:methods>
+                        <uml:relations>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="Test" uml:target="String[]"/>
+                        </uml:relations>
+                    </uml:class>
+                </uml:classes>
+                <uml:ennumerations>
+                    <uml:enumeration uml:name="Civilite">
+                        <uml:fields>
+                            <uml:field uml:modifier="public static final" uml:name="MADAME" uml:type="Civilite"/>
+                            <uml:field uml:modifier="public static final" uml:name="MADEMOISELLE" uml:type="Civilite"/>
+                            <uml:field uml:modifier="public static final" uml:name="MONSIEUR" uml:type="Civilite"/>
+                            <uml:field uml:modifier="private" uml:name="abreviation" uml:type="String"/>
+                            <uml:field uml:modifier="private static final" uml:name="ENUM$VALUES" uml:type="Civilite[]"/>
+                        </uml:fields>
+                        <uml:methods>
+                            <uml:method uml:modifier="public static" uml:name="values" uml:return-type="Civilite[]"/>
+                            <uml:method uml:modifier="public static" uml:name="valueOf" uml:return-type="Civilite">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="String"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="getAbreviation" uml:return-type="String"/>
+                        </uml:methods>
+                    </uml:enumeration>
+                </uml:ennumerations>
+            </uml:Package>
+            <uml:Package name="org.mql.java.main">
+                <uml:classes>
+                    <uml:class uml:name="Examples">
+                        <uml:methods>
+                            <uml:method uml:modifier="public static" uml:name="main" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="String[]"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:name="exp01" uml:return-type="void"/>
+                        </uml:methods>
+                        <uml:relations>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="Examples" uml:target="String[]"/>
+                        </uml:relations>
+                    </uml:class>
+                </uml:classes>
+            </uml:Package>
+            <uml:Package name="org.mql.java.model">
+                <uml:classes>
+                    <uml:class uml:name="FieldType">
+                        <uml:fields>
+                            <uml:field uml:modifier="private" uml:name="name" uml:type="String"/>
+                            <uml:field uml:modifier="private" uml:name="type" uml:type="String"/>
+                            <uml:field uml:modifier="private" uml:name="modifier" uml:type="String"/>
+                            <uml:field uml:modifier="private" uml:name="annotations" uml:type="List"/>
+                        </uml:fields>
+                        <uml:methods>
+                            <uml:method uml:modifier="public" uml:name="getName" uml:return-type="String"/>
+                            <uml:method uml:modifier="public" uml:name="toString" uml:return-type="String"/>
+                            <uml:method uml:modifier="public" uml:name="getAnnotations" uml:return-type="List"/>
+                            <uml:method uml:modifier="public" uml:name="setName" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="String"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="getType" uml:return-type="String"/>
+                            <uml:method uml:modifier="public" uml:name="setAnnotations" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="List"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="setModifier" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="String"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="setType" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="String"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="getModifier" uml:return-type="String"/>
+                        </uml:methods>
+                        <uml:relations>
+                            <uml:relation uml:relation-type="AGGREGATION" uml:source="FieldType" uml:target="String"/>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="FieldType" uml:target="List"/>
+                        </uml:relations>
+                    </uml:class>
+                    <uml:class uml:name="MethodType">
+                        <uml:fields>
+                            <uml:field uml:modifier="private" uml:name="name" uml:type="String"/>
+                            <uml:field uml:modifier="private" uml:name="modifier" uml:type="String"/>
+                            <uml:field uml:modifier="private" uml:name="returnType" uml:type="String"/>
+                            <uml:field uml:modifier="private" uml:name="parameters" uml:type="List"/>
+                            <uml:field uml:modifier="private" uml:name="annotations" uml:type="List"/>
+                        </uml:fields>
+                        <uml:methods>
+                            <uml:method uml:modifier="public" uml:name="getName" uml:return-type="String"/>
+                            <uml:method uml:modifier="public" uml:name="toString" uml:return-type="String"/>
+                            <uml:method uml:modifier="public" uml:name="getReturnType" uml:return-type="String"/>
+                            <uml:method uml:modifier="public" uml:name="getAnnotations" uml:return-type="List"/>
+                            <uml:method uml:modifier="public" uml:name="setName" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="String"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="getParameters" uml:return-type="List"/>
+                            <uml:method uml:modifier="public" uml:name="setAnnotations" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="List"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="setModifier" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="String"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="setReturnType" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="String"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="setParameters" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="List"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="getModifier" uml:return-type="String"/>
+                        </uml:methods>
+                        <uml:relations>
+                            <uml:relation uml:relation-type="AGGREGATION" uml:source="MethodType" uml:target="String"/>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="MethodType" uml:target="List"/>
+                        </uml:relations>
+                    </uml:class>
+                    <uml:class uml:name="ClassEntity">
+                        <uml:fields>
+                            <uml:field uml:modifier="private" uml:name="name" uml:type="String"/>
+                            <uml:field uml:modifier="private" uml:name="type" uml:type="String"/>
+                            <uml:field uml:modifier="private" uml:name="methods" uml:type="List"/>
+                            <uml:field uml:modifier="private" uml:name="fields" uml:type="List"/>
+                            <uml:field uml:modifier="private" uml:name="superClasse" uml:type="String"/>
+                            <uml:field uml:modifier="private" uml:name="innerClasses" uml:type="List"/>
+                            <uml:field uml:modifier="private" uml:name="constructors" uml:type="List"/>
+                            <uml:field uml:modifier="private" uml:name="relations" uml:type="List"/>
+                            <uml:field uml:modifier="private" uml:name="interfaces" uml:type="List"/>
+                            <uml:field uml:modifier="private" uml:name="annotations" uml:type="List"/>
+                            <uml:field uml:modifier="private" uml:name="ennumerations" uml:type="List"/>
+                        </uml:fields>
+                        <uml:methods>
+                            <uml:method uml:modifier="public" uml:name="getName" uml:return-type="String"/>
+                            <uml:method uml:modifier="public" uml:name="getInterfaces" uml:return-type="List"/>
+                            <uml:method uml:modifier="public" uml:name="getFields" uml:return-type="List"/>
+                            <uml:method uml:modifier="public" uml:name="getMethods" uml:return-type="List"/>
+                            <uml:method uml:modifier="public" uml:name="getConstructors" uml:return-type="List"/>
+                            <uml:method uml:modifier="public" uml:name="getAnnotations" uml:return-type="List"/>
+                            <uml:method uml:modifier="public" uml:name="setName" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="String"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="getType" uml:return-type="String"/>
+                            <uml:method uml:modifier="public" uml:name="getSuperClasse" uml:return-type="String"/>
+                            <uml:method uml:modifier="public" uml:name="getRelations" uml:return-type="List"/>
+                            <uml:method uml:modifier="public" uml:name="setRelations" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="List"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="setInterfaces" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="List"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="setAnnotations" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="List"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="setType" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="String"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="setSuperClasse" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="String"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="getInnerClasses" uml:return-type="List"/>
+                            <uml:method uml:modifier="public" uml:name="setInnerClasses" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="List"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="setMethods" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="List"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="setConstructors" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="List"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="setEnnumerations" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="List"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="setFields" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="List"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="getEnnumerations" uml:return-type="List"/>
+                        </uml:methods>
+                        <uml:relations>
+                            <uml:relation uml:relation-type="AGGREGATION" uml:source="ClassEntity" uml:target="MethodType"/>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="ClassEntity" uml:target="List"/>
+                        </uml:relations>
+                    </uml:class>
+                    <uml:class uml:name="PackageEntity">
+                        <uml:fields>
+                            <uml:field uml:modifier="private" uml:name="name" uml:type="String"/>
+                            <uml:field uml:modifier="private" uml:name="relations" uml:type="List"/>
+                            <uml:field uml:modifier="private" uml:name="allFiles" uml:type="List"/>
+                            <uml:field uml:modifier="private" uml:name="classes" uml:type="List"/>
+                            <uml:field uml:modifier="private" uml:name="interfaces" uml:type="List"/>
+                            <uml:field uml:modifier="private" uml:name="enumerations" uml:type="List"/>
+                            <uml:field uml:modifier="private" uml:name="annotations" uml:type="List"/>
+                        </uml:fields>
+                        <uml:methods>
+                            <uml:method uml:modifier="public" uml:name="getName" uml:return-type="String"/>
+                            <uml:method uml:modifier="public" uml:name="getInterfaces" uml:return-type="List"/>
+                            <uml:method uml:modifier="public" uml:name="getClasses" uml:return-type="List"/>
+                            <uml:method uml:modifier="public" uml:name="getAnnotations" uml:return-type="List"/>
+                            <uml:method uml:modifier="public" uml:name="setName" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="String"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="getAllFiles" uml:return-type="List"/>
+                            <uml:method uml:modifier="public" uml:name="getRelations" uml:return-type="List"/>
+                            <uml:method uml:modifier="public" uml:name="setClasses" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="List"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="getEnumerations" uml:return-type="List"/>
+                            <uml:method uml:modifier="public" uml:name="setAllFiles" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="List"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="setRelations" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="List"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="setInterfaces" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="List"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="setAnnotations" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="List"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="setEnumerations" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="List"/>
+                                </uml:parameters>
+                            </uml:method>
+                        </uml:methods>
+                        <uml:relations>
+                            <uml:relation uml:relation-type="AGGREGATION" uml:source="PackageEntity" uml:target="RelationEntity"/>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="PackageEntity" uml:target="List"/>
+                        </uml:relations>
+                    </uml:class>
+                    <uml:class uml:name="ProjectEntity">
+                        <uml:fields>
+                            <uml:field uml:modifier="private" uml:name="projectName" uml:type="String"/>
+                            <uml:field uml:modifier="private" uml:name="packages" uml:type="List"/>
+                        </uml:fields>
+                        <uml:methods>
+                            <uml:method uml:modifier="public" uml:name="getPackages" uml:return-type="List"/>
+                            <uml:method uml:modifier="public" uml:name="getProjectName" uml:return-type="String"/>
+                            <uml:method uml:modifier="public" uml:name="setProjectName" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="String"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="setPackages" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="List"/>
+                                </uml:parameters>
+                            </uml:method>
+                        </uml:methods>
+                        <uml:relations>
+                            <uml:relation uml:relation-type="AGGREGATION" uml:source="ProjectEntity" uml:target="PackageEntity"/>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="ProjectEntity" uml:target="List"/>
+                        </uml:relations>
+                    </uml:class>
+                    <uml:class uml:name="RelationEntity">
+                        <uml:fields>
+                            <uml:field uml:modifier="private" uml:name="type" uml:type="RelationType"/>
+                            <uml:field uml:modifier="private" uml:name="description" uml:type="String"/>
+                            <uml:field uml:modifier="private" uml:name="sourceClass" uml:type="String"/>
+                            <uml:field uml:modifier="private" uml:name="targetClass" uml:type="String"/>
+                        </uml:fields>
+                        <uml:methods>
+                            <uml:method uml:modifier="public" uml:name="getType" uml:return-type="RelationType"/>
+                            <uml:method uml:modifier="public" uml:name="display" uml:return-type="void"/>
+                            <uml:method uml:modifier="public" uml:name="setTargetClass" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="String"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="getDescription" uml:return-type="String"/>
+                            <uml:method uml:modifier="public" uml:name="setType" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="RelationType"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="getSourceClass" uml:return-type="String"/>
+                            <uml:method uml:modifier="public" uml:name="setSourceClass" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="String"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="setDescription" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="String"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="getTargetClass" uml:return-type="String"/>
+                        </uml:methods>
+                        <uml:relations>
+                            <uml:relation uml:relation-type="COMPOSITION" uml:source="RelationEntity" uml:target="RelationType"/>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="RelationEntity" uml:target="RelationType"/>
+                        </uml:relations>
+                    </uml:class>
+                </uml:classes>
+                <uml:ennumerations>
+                    <uml:enumeration uml:name="RelationType">
+                        <uml:fields>
+                            <uml:field uml:modifier="public static final" uml:name="ASSOCIATION" uml:type="RelationType"/>
+                            <uml:field uml:modifier="public static final" uml:name="COMPOSITION" uml:type="RelationType"/>
+                            <uml:field uml:modifier="public static final" uml:name="AGGREGATION" uml:type="RelationType"/>
+                            <uml:field uml:modifier="public static final" uml:name="UTILISATION" uml:type="RelationType"/>
+                            <uml:field uml:modifier="public static final" uml:name="EXTENSION" uml:type="RelationType"/>
+                            <uml:field uml:modifier="private static final" uml:name="ENUM$VALUES" uml:type="RelationType[]"/>
+                        </uml:fields>
+                        <uml:methods>
+                            <uml:method uml:modifier="public static" uml:name="values" uml:return-type="RelationType[]"/>
+                            <uml:method uml:modifier="public static" uml:name="valueOf" uml:return-type="RelationType">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="String"/>
+                                </uml:parameters>
+                            </uml:method>
+                        </uml:methods>
+                    </uml:enumeration>
+                </uml:ennumerations>
+            </uml:Package>
+            <uml:Package name="org.mql.java.parser">
+                <uml:classes>
+                    <uml:class uml:name="ClassParser">
+                        <uml:methods>
+                            <uml:method uml:modifier="private static" uml:name="lambda$0" uml:return-type="boolean">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Class"/>
+                                    <uml:parameter uml:type="Field"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="private static" uml:name="getAggregationElementType" uml:return-type="Class">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Field"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public static" uml:name="extractConstructorsName" uml:return-type="List">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Constructor[]"/>
+                                    <uml:parameter uml:type="String"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public static" uml:name="extractSuperClasseName" uml:return-type="String">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Class"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public static" uml:name="extractInterfacesName" uml:return-type="List">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Class[]"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public static" uml:name="extractInnerClassesName" uml:return-type="List">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Class[]"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public static" uml:name="extractMethodsName" uml:return-type="List">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Method[]"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public static" uml:name="extractFieldsName" uml:return-type="List">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Field[]"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="private static" uml:name="isAggregation" uml:return-type="boolean">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Field"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public static" uml:name="extractRelations" uml:return-type="List">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Class"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="private static" uml:name="defineType" uml:return-type="boolean">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Class"/>
+                                    <uml:parameter uml:type="ClassEntity"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="private static" uml:name="isComposition" uml:return-type="boolean">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Field"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="private static" uml:name="isAssociation" uml:return-type="boolean">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Class"/>
+                                    <uml:parameter uml:type="Field"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public static" uml:name="parseClass" uml:return-type="ClassEntity">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Class"/>
+                                </uml:parameters>
+                            </uml:method>
+                        </uml:methods>
+                        <uml:relations>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="ClassParser" uml:target="Class"/>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="ClassParser" uml:target="Field"/>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="ClassParser" uml:target="Constructor[]"/>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="ClassParser" uml:target="Class[]"/>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="ClassParser" uml:target="Method[]"/>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="ClassParser" uml:target="Field[]"/>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="ClassParser" uml:target="ClassEntity"/>
+                        </uml:relations>
+                    </uml:class>
+                    <uml:class uml:name="PackageParser">
+                        <uml:methods>
+                            <uml:method uml:modifier="private static" uml:name="lambda$0" uml:return-type="boolean">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="File"/>
+                                    <uml:parameter uml:type="String"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public static" uml:name="parsePackage" uml:return-type="PackageEntity">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="String"/>
+                                    <uml:parameter uml:type="String"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public static" uml:name="extractClasses" uml:return-type="List">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="String"/>
+                                    <uml:parameter uml:type="String"/>
+                                    <uml:parameter uml:type="PackageEntity"/>
+                                </uml:parameters>
+                            </uml:method>
+                        </uml:methods>
+                        <uml:relations>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="PackageParser" uml:target="File"/>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="PackageParser" uml:target="PackageEntity"/>
+                        </uml:relations>
+                    </uml:class>
+                    <uml:class uml:name="ProjectParser">
+                        <uml:methods>
+                            <uml:method uml:modifier="private static" uml:name="extractPackagesRecursively" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="File"/>
+                                    <uml:parameter uml:type="List"/>
+                                    <uml:parameter uml:type="String"/>
+                                    <uml:parameter uml:type="String"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="private static" uml:name="addPackageIfNotExists" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="List"/>
+                                    <uml:parameter uml:type="String"/>
+                                    <uml:parameter uml:type="String"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="private static" uml:name="lambda$0" uml:return-type="boolean">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="String"/>
+                                    <uml:parameter uml:type="PackageEntity"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public static" uml:name="parseProject" uml:return-type="ProjectEntity">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="String"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="private static" uml:name="extractPackages" uml:return-type="List">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="File"/>
+                                    <uml:parameter uml:type="String"/>
+                                </uml:parameters>
+                            </uml:method>
+                        </uml:methods>
+                        <uml:relations>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="ProjectParser" uml:target="File"/>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="ProjectParser" uml:target="List"/>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="ProjectParser" uml:target="PackageEntity"/>
+                        </uml:relations>
+                    </uml:class>
+                </uml:classes>
+            </uml:Package>
+            <uml:Package name="org.mql.java.ui">
+                <uml:classes>
+                    <uml:class uml:name="ConsoleDisplay">
+                        <uml:methods>
+                            <uml:method uml:modifier="private" uml:name="displayEntitiesByType" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="List"/>
+                                    <uml:parameter uml:type="String"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="displayClassMembers" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="ClassEntity"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="private" uml:name="filterEntitiesByType" uml:return-type="List">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="List"/>
+                                    <uml:parameter uml:type="String"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="private static" uml:name="lambda$0" uml:return-type="boolean">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="String"/>
+                                    <uml:parameter uml:type="ClassEntity"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="displayPackages" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="List"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="private" uml:name="capitalize" uml:return-type="String">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="String"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="displayClasses" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="List"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public" uml:name="parserDisplay" uml:return-type="void"/>
+                            <uml:method uml:modifier="public" uml:name="displayProject" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="ProjectEntity"/>
+                                </uml:parameters>
+                            </uml:method>
+                        </uml:methods>
+                        <uml:relations>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="ConsoleDisplay" uml:target="List"/>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="ConsoleDisplay" uml:target="ClassEntity"/>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="ConsoleDisplay" uml:target="ProjectEntity"/>
+                        </uml:relations>
+                    </uml:class>
+                </uml:classes>
+            </uml:Package>
+            <uml:Package name="org.mql.java.xml">
+                <uml:classes>
+                    <uml:class uml:name="XmiGenerator">
+                        <uml:methods>
+                            <uml:method uml:modifier="private static" uml:name="createEnumElement" uml:return-type="Element">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Document"/>
+                                    <uml:parameter uml:type="ClassEntity"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="private static" uml:name="createClassElement" uml:return-type="Element">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Document"/>
+                                    <uml:parameter uml:type="ClassEntity"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="private static" uml:name="createFieldElement" uml:return-type="Element">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Document"/>
+                                    <uml:parameter uml:type="FieldType"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public static" uml:name="generateProjectXmi" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="ProjectEntity"/>
+                                    <uml:parameter uml:type="String"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="private static" uml:name="createAnnotationElement" uml:return-type="Element">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Document"/>
+                                    <uml:parameter uml:type="ClassEntity"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="private static" uml:name="createMethodElement" uml:return-type="Element">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Document"/>
+                                    <uml:parameter uml:type="MethodType"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="private static" uml:name="createRelationElement" uml:return-type="Element">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Document"/>
+                                    <uml:parameter uml:type="RelationEntity"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="private static" uml:name="createInterfaceElement" uml:return-type="Element">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Document"/>
+                                    <uml:parameter uml:type="ClassEntity"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="private static" uml:name="createPackageElement" uml:return-type="Element">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Document"/>
+                                    <uml:parameter uml:type="PackageEntity"/>
+                                </uml:parameters>
+                            </uml:method>
+                        </uml:methods>
+                        <uml:relations>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="XmiGenerator" uml:target="Document"/>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="XmiGenerator" uml:target="ClassEntity"/>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="XmiGenerator" uml:target="FieldType"/>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="XmiGenerator" uml:target="ProjectEntity"/>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="XmiGenerator" uml:target="MethodType"/>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="XmiGenerator" uml:target="RelationEntity"/>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="XmiGenerator" uml:target="PackageEntity"/>
+                        </uml:relations>
+                    </uml:class>
+                    <uml:class uml:name="XmlGenerator">
+                        <uml:methods>
+                            <uml:method uml:modifier="private static" uml:name="createEnumElement" uml:return-type="Element">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Document"/>
+                                    <uml:parameter uml:type="ClassEntity"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="private static" uml:name="createClassElement" uml:return-type="Element">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Document"/>
+                                    <uml:parameter uml:type="ClassEntity"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="private static" uml:name="createFieldElement" uml:return-type="Element">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Document"/>
+                                    <uml:parameter uml:type="FieldType"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="public static" uml:name="generateProjectXml" uml:return-type="void">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="ProjectEntity"/>
+                                    <uml:parameter uml:type="String"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="private static" uml:name="createAnnotationElement" uml:return-type="Element">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Document"/>
+                                    <uml:parameter uml:type="ClassEntity"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="private static" uml:name="createMethodElement" uml:return-type="Element">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Document"/>
+                                    <uml:parameter uml:type="MethodType"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="private static" uml:name="createRelationElement" uml:return-type="Element">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Document"/>
+                                    <uml:parameter uml:type="RelationEntity"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="private static" uml:name="createInterfaceElement" uml:return-type="Element">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Document"/>
+                                    <uml:parameter uml:type="ClassEntity"/>
+                                </uml:parameters>
+                            </uml:method>
+                            <uml:method uml:modifier="private static" uml:name="createPackageElement" uml:return-type="Element">
+                                <uml:parameters>
+                                    <uml:parameter uml:type="Document"/>
+                                    <uml:parameter uml:type="PackageEntity"/>
+                                </uml:parameters>
+                            </uml:method>
+                        </uml:methods>
+                        <uml:relations>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="XmlGenerator" uml:target="Document"/>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="XmlGenerator" uml:target="ClassEntity"/>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="XmlGenerator" uml:target="FieldType"/>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="XmlGenerator" uml:target="ProjectEntity"/>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="XmlGenerator" uml:target="MethodType"/>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="XmlGenerator" uml:target="RelationEntity"/>
+                            <uml:relation uml:relation-type="UTILISATION" uml:source="XmlGenerator" uml:target="PackageEntity"/>
+                        </uml:relations>
+                    </uml:class>
+                </uml:classes>
+            </uml:Package>
+        </uml:packages>
+    </uml:project>
+</xmi:XMI>

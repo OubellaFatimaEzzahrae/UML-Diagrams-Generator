@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
+    <name>Oubella FatimaEzzahrae-UML Diagrams Generator</name>
+    <packages>
+        <package name="org.mql.java.brouillon">
+            <interfaces>
+                <interface name="TestInterface">
+                    <fields>
+                        <field modifier="public static final" name="PI" type="double"/>
+                    </fields>
+                    <methods>
+                        <method modifier="public abstract" name="add" return-type="void"/>
+                    </methods>
+                </interface>
+            </interfaces>
+            <annotations>
+                <annotation name="annotationTest">
+                    <fields>
+                        <field modifier="public static final" name="param1" type="String"/>
+                    </fields>
+                </annotation>
+            </annotations>
+        </package>
+        <package name="org.mql.java">
+            <classes>
+                <class name="Test">
+                    <methods>
+                        <method modifier="public static" name="main" return-type="void">
+                            <parameters>
+                                <parameter type="String[]"/>
+                            </parameters>
+                        </method>
+                    </methods>
+                    <relations>
+                        <relation relation-type="UTILISATION" source="Test" target="String[]"/>
+                    </relations>
+                </class>
+            </classes>
+            <ennumerations>
+                <enumeration name="Civilite">
+                    <fields>
+                        <field modifier="public static final" name="MADAME" type="Civilite"/>
+                        <field modifier="public static final" name="MADEMOISELLE" type="Civilite"/>
+                        <field modifier="public static final" name="MONSIEUR" type="Civilite"/>
+                        <field modifier="private" name="abreviation" type="String"/>
+                        <field modifier="private static final" name="ENUM$VALUES" type="Civilite[]"/>
+                    </fields>
+                    <methods>
+                        <method modifier="public static" name="values" return-type="Civilite[]"/>
+                        <method modifier="public static" name="valueOf" return-type="Civilite">
+                            <parameters>
+                                <parameter type="String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getAbreviation" return-type="String"/>
+                    </methods>
+                </enumeration>
+            </ennumerations>
+        </package>
+        <package name="org.mql.java.main">
+            <classes>
+                <class name="Examples">
+                    <methods>
+                        <method modifier="public static" name="main" return-type="void">
+                            <parameters>
+                                <parameter type="String[]"/>
+                            </parameters>
+                        </method>
+                        <method name="exp01" return-type="void"/>
+                    </methods>
+                    <relations>
+                        <relation relation-type="UTILISATION" source="Examples" target="String[]"/>
+                    </relations>
+                </class>
+            </classes>
+        </package>
+        <package name="org.mql.java.model">
+            <classes>
+                <class name="FieldType">
+                    <fields>
+                        <field modifier="private" name="name" type="String"/>
+                        <field modifier="private" name="type" type="String"/>
+                        <field modifier="private" name="modifier" type="String"/>
+                        <field modifier="private" name="annotations" type="List"/>
+                    </fields>
+                    <methods>
+                        <method modifier="public" name="getName" return-type="String"/>
+                        <method modifier="public" name="toString" return-type="String"/>
+                        <method modifier="public" name="getAnnotations" return-type="List"/>
+                        <method modifier="public" name="setName" return-type="void">
+                            <parameters>
+                                <parameter type="String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getType" return-type="String"/>
+                        <method modifier="public" name="setAnnotations" return-type="void">
+                            <parameters>
+                                <parameter type="List"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setModifier" return-type="void">
+                            <parameters>
+                                <parameter type="String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setType" return-type="void">
+                            <parameters>
+                                <parameter type="String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getModifier" return-type="String"/>
+                    </methods>
+                    <relations>
+                        <relation relation-type="AGGREGATION" source="FieldType" target="String"/>
+                        <relation relation-type="UTILISATION" source="FieldType" target="List"/>
+                    </relations>
+                </class>
+                <class name="MethodType">
+                    <fields>
+                        <field modifier="private" name="name" type="String"/>
+                        <field modifier="private" name="modifier" type="String"/>
+                        <field modifier="private" name="returnType" type="String"/>
+                        <field modifier="private" name="parameters" type="List"/>
+                        <field modifier="private" name="annotations" type="List"/>
+                    </fields>
+                    <methods>
+                        <method modifier="public" name="getName" return-type="String"/>
+                        <method modifier="public" name="toString" return-type="String"/>
+                        <method modifier="public" name="getReturnType" return-type="String"/>
+                        <method modifier="public" name="getAnnotations" return-type="List"/>
+                        <method modifier="public" name="setName" return-type="void">
+                            <parameters>
+                                <parameter type="String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getParameters" return-type="List"/>
+                        <method modifier="public" name="setAnnotations" return-type="void">
+                            <parameters>
+                                <parameter type="List"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setModifier" return-type="void">
+                            <parameters>
+                                <parameter type="String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setReturnType" return-type="void">
+                            <parameters>
+                                <parameter type="String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setParameters" return-type="void">
+                            <parameters>
+                                <parameter type="List"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getModifier" return-type="String"/>
+                    </methods>
+                    <relations>
+                        <relation relation-type="AGGREGATION" source="MethodType" target="String"/>
+                        <relation relation-type="UTILISATION" source="MethodType" target="List"/>
+                    </relations>
+                </class>
+                <class name="ClassEntity">
+                    <fields>
+                        <field modifier="private" name="name" type="String"/>
+                        <field modifier="private" name="type" type="String"/>
+                        <field modifier="private" name="methods" type="List"/>
+                        <field modifier="private" name="fields" type="List"/>
+                        <field modifier="private" name="superClasse" type="String"/>
+                        <field modifier="private" name="innerClasses" type="List"/>
+                        <field modifier="private" name="constructors" type="List"/>
+                        <field modifier="private" name="relations" type="List"/>
+                        <field modifier="private" name="interfaces" type="List"/>
+                        <field modifier="private" name="annotations" type="List"/>
+                        <field modifier="private" name="ennumerations" type="List"/>
+                    </fields>
+                    <methods>
+                        <method modifier="public" name="getName" return-type="String"/>
+                        <method modifier="public" name="getInterfaces" return-type="List"/>
+                        <method modifier="public" name="getFields" return-type="List"/>
+                        <method modifier="public" name="getMethods" return-type="List"/>
+                        <method modifier="public" name="getConstructors" return-type="List"/>
+                        <method modifier="public" name="getAnnotations" return-type="List"/>
+                        <method modifier="public" name="setName" return-type="void">
+                            <parameters>
+                                <parameter type="String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getType" return-type="String"/>
+                        <method modifier="public" name="getSuperClasse" return-type="String"/>
+                        <method modifier="public" name="getRelations" return-type="List"/>
+                        <method modifier="public" name="setRelations" return-type="void">
+                            <parameters>
+                                <parameter type="List"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setInterfaces" return-type="void">
+                            <parameters>
+                                <parameter type="List"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setAnnotations" return-type="void">
+                            <parameters>
+                                <parameter type="List"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setType" return-type="void">
+                            <parameters>
+                                <parameter type="String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setSuperClasse" return-type="void">
+                            <parameters>
+                                <parameter type="String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getInnerClasses" return-type="List"/>
+                        <method modifier="public" name="setInnerClasses" return-type="void">
+                            <parameters>
+                                <parameter type="List"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setMethods" return-type="void">
+                            <parameters>
+                                <parameter type="List"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setConstructors" return-type="void">
+                            <parameters>
+                                <parameter type="List"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setEnnumerations" return-type="void">
+                            <parameters>
+                                <parameter type="List"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setFields" return-type="void">
+                            <parameters>
+                                <parameter type="List"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getEnnumerations" return-type="List"/>
+                    </methods>
+                    <relations>
+                        <relation relation-type="AGGREGATION" source="ClassEntity" target="MethodType"/>
+                        <relation relation-type="UTILISATION" source="ClassEntity" target="List"/>
+                    </relations>
+                </class>
+                <class name="PackageEntity">
+                    <fields>
+                        <field modifier="private" name="name" type="String"/>
+                        <field modifier="private" name="relations" type="List"/>
+                        <field modifier="private" name="allFiles" type="List"/>
+                        <field modifier="private" name="classes" type="List"/>
+                        <field modifier="private" name="interfaces" type="List"/>
+                        <field modifier="private" name="enumerations" type="List"/>
+                        <field modifier="private" name="annotations" type="List"/>
+                    </fields>
+                    <methods>
+                        <method modifier="public" name="getName" return-type="String"/>
+                        <method modifier="public" name="getInterfaces" return-type="List"/>
+                        <method modifier="public" name="getClasses" return-type="List"/>
+                        <method modifier="public" name="getAnnotations" return-type="List"/>
+                        <method modifier="public" name="setName" return-type="void">
+                            <parameters>
+                                <parameter type="String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getAllFiles" return-type="List"/>
+                        <method modifier="public" name="getRelations" return-type="List"/>
+                        <method modifier="public" name="setClasses" return-type="void">
+                            <parameters>
+                                <parameter type="List"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getEnumerations" return-type="List"/>
+                        <method modifier="public" name="setAllFiles" return-type="void">
+                            <parameters>
+                                <parameter type="List"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setRelations" return-type="void">
+                            <parameters>
+                                <parameter type="List"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setInterfaces" return-type="void">
+                            <parameters>
+                                <parameter type="List"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setAnnotations" return-type="void">
+                            <parameters>
+                                <parameter type="List"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setEnumerations" return-type="void">
+                            <parameters>
+                                <parameter type="List"/>
+                            </parameters>
+                        </method>
+                    </methods>
+                    <relations>
+                        <relation relation-type="AGGREGATION" source="PackageEntity" target="RelationEntity"/>
+                        <relation relation-type="UTILISATION" source="PackageEntity" target="List"/>
+                    </relations>
+                </class>
+                <class name="ProjectEntity">
+                    <fields>
+                        <field modifier="private" name="projectName" type="String"/>
+                        <field modifier="private" name="packages" type="List"/>
+                    </fields>
+                    <methods>
+                        <method modifier="public" name="getPackages" return-type="List"/>
+                        <method modifier="public" name="getProjectName" return-type="String"/>
+                        <method modifier="public" name="setProjectName" return-type="void">
+                            <parameters>
+                                <parameter type="String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setPackages" return-type="void">
+                            <parameters>
+                                <parameter type="List"/>
+                            </parameters>
+                        </method>
+                    </methods>
+                    <relations>
+                        <relation relation-type="AGGREGATION" source="ProjectEntity" target="PackageEntity"/>
+                        <relation relation-type="UTILISATION" source="ProjectEntity" target="List"/>
+                    </relations>
+                </class>
+                <class name="RelationEntity">
+                    <fields>
+                        <field modifier="private" name="type" type="RelationType"/>
+                        <field modifier="private" name="description" type="String"/>
+                        <field modifier="private" name="sourceClass" type="String"/>
+                        <field modifier="private" name="targetClass" type="String"/>
+                    </fields>
+                    <methods>
+                        <method modifier="public" name="getType" return-type="RelationType"/>
+                        <method modifier="public" name="display" return-type="void"/>
+                        <method modifier="public" name="setTargetClass" return-type="void">
+                            <parameters>
+                                <parameter type="String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getDescription" return-type="String"/>
+                        <method modifier="public" name="setType" return-type="void">
+                            <parameters>
+                                <parameter type="RelationType"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getSourceClass" return-type="String"/>
+                        <method modifier="public" name="setSourceClass" return-type="void">
+                            <parameters>
+                                <parameter type="String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="setDescription" return-type="void">
+                            <parameters>
+                                <parameter type="String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="getTargetClass" return-type="String"/>
+                    </methods>
+                    <relations>
+                        <relation relation-type="COMPOSITION" source="RelationEntity" target="RelationType"/>
+                        <relation relation-type="UTILISATION" source="RelationEntity" target="RelationType"/>
+                    </relations>
+                </class>
+            </classes>
+            <ennumerations>
+                <enumeration name="RelationType">
+                    <fields>
+                        <field modifier="public static final" name="ASSOCIATION" type="RelationType"/>
+                        <field modifier="public static final" name="COMPOSITION" type="RelationType"/>
+                        <field modifier="public static final" name="AGGREGATION" type="RelationType"/>
+                        <field modifier="public static final" name="UTILISATION" type="RelationType"/>
+                        <field modifier="public static final" name="EXTENSION" type="RelationType"/>
+                        <field modifier="private static final" name="ENUM$VALUES" type="RelationType[]"/>
+                    </fields>
+                    <methods>
+                        <method modifier="public static" name="values" return-type="RelationType[]"/>
+                        <method modifier="public static" name="valueOf" return-type="RelationType">
+                            <parameters>
+                                <parameter type="String"/>
+                            </parameters>
+                        </method>
+                    </methods>
+                </enumeration>
+            </ennumerations>
+        </package>
+        <package name="org.mql.java.parser">
+            <classes>
+                <class name="ClassParser">
+                    <methods>
+                        <method modifier="private static" name="lambda$0" return-type="boolean">
+                            <parameters>
+                                <parameter type="Class"/>
+                                <parameter type="Field"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="getAggregationElementType" return-type="Class">
+                            <parameters>
+                                <parameter type="Field"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public static" name="extractConstructorsName" return-type="List">
+                            <parameters>
+                                <parameter type="Constructor[]"/>
+                                <parameter type="String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public static" name="extractSuperClasseName" return-type="String">
+                            <parameters>
+                                <parameter type="Class"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public static" name="extractInterfacesName" return-type="List">
+                            <parameters>
+                                <parameter type="Class[]"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public static" name="extractInnerClassesName" return-type="List">
+                            <parameters>
+                                <parameter type="Class[]"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public static" name="extractMethodsName" return-type="List">
+                            <parameters>
+                                <parameter type="Method[]"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public static" name="extractFieldsName" return-type="List">
+                            <parameters>
+                                <parameter type="Field[]"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="isAggregation" return-type="boolean">
+                            <parameters>
+                                <parameter type="Field"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public static" name="extractRelations" return-type="List">
+                            <parameters>
+                                <parameter type="Class"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="defineType" return-type="boolean">
+                            <parameters>
+                                <parameter type="Class"/>
+                                <parameter type="ClassEntity"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="isComposition" return-type="boolean">
+                            <parameters>
+                                <parameter type="Field"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="isAssociation" return-type="boolean">
+                            <parameters>
+                                <parameter type="Class"/>
+                                <parameter type="Field"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public static" name="parseClass" return-type="ClassEntity">
+                            <parameters>
+                                <parameter type="Class"/>
+                            </parameters>
+                        </method>
+                    </methods>
+                    <relations>
+                        <relation relation-type="UTILISATION" source="ClassParser" target="Class"/>
+                        <relation relation-type="UTILISATION" source="ClassParser" target="Field"/>
+                        <relation relation-type="UTILISATION" source="ClassParser" target="Constructor[]"/>
+                        <relation relation-type="UTILISATION" source="ClassParser" target="Class[]"/>
+                        <relation relation-type="UTILISATION" source="ClassParser" target="Method[]"/>
+                        <relation relation-type="UTILISATION" source="ClassParser" target="Field[]"/>
+                        <relation relation-type="UTILISATION" source="ClassParser" target="ClassEntity"/>
+                    </relations>
+                </class>
+                <class name="PackageParser">
+                    <methods>
+                        <method modifier="private static" name="lambda$0" return-type="boolean">
+                            <parameters>
+                                <parameter type="File"/>
+                                <parameter type="String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public static" name="parsePackage" return-type="PackageEntity">
+                            <parameters>
+                                <parameter type="String"/>
+                                <parameter type="String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public static" name="extractClasses" return-type="List">
+                            <parameters>
+                                <parameter type="String"/>
+                                <parameter type="String"/>
+                                <parameter type="PackageEntity"/>
+                            </parameters>
+                        </method>
+                    </methods>
+                    <relations>
+                        <relation relation-type="UTILISATION" source="PackageParser" target="File"/>
+                        <relation relation-type="UTILISATION" source="PackageParser" target="PackageEntity"/>
+                    </relations>
+                </class>
+                <class name="ProjectParser">
+                    <methods>
+                        <method modifier="private static" name="extractPackagesRecursively" return-type="void">
+                            <parameters>
+                                <parameter type="File"/>
+                                <parameter type="List"/>
+                                <parameter type="String"/>
+                                <parameter type="String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="addPackageIfNotExists" return-type="void">
+                            <parameters>
+                                <parameter type="List"/>
+                                <parameter type="String"/>
+                                <parameter type="String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="lambda$0" return-type="boolean">
+                            <parameters>
+                                <parameter type="String"/>
+                                <parameter type="PackageEntity"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public static" name="parseProject" return-type="ProjectEntity">
+                            <parameters>
+                                <parameter type="String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="extractPackages" return-type="List">
+                            <parameters>
+                                <parameter type="File"/>
+                                <parameter type="String"/>
+                            </parameters>
+                        </method>
+                    </methods>
+                    <relations>
+                        <relation relation-type="UTILISATION" source="ProjectParser" target="File"/>
+                        <relation relation-type="UTILISATION" source="ProjectParser" target="List"/>
+                        <relation relation-type="UTILISATION" source="ProjectParser" target="PackageEntity"/>
+                    </relations>
+                </class>
+            </classes>
+        </package>
+        <package name="org.mql.java.ui">
+            <classes>
+                <class name="ConsoleDisplay">
+                    <methods>
+                        <method modifier="private" name="displayEntitiesByType" return-type="void">
+                            <parameters>
+                                <parameter type="List"/>
+                                <parameter type="String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="displayClassMembers" return-type="void">
+                            <parameters>
+                                <parameter type="ClassEntity"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private" name="filterEntitiesByType" return-type="List">
+                            <parameters>
+                                <parameter type="List"/>
+                                <parameter type="String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="lambda$0" return-type="boolean">
+                            <parameters>
+                                <parameter type="String"/>
+                                <parameter type="ClassEntity"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="displayPackages" return-type="void">
+                            <parameters>
+                                <parameter type="List"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private" name="capitalize" return-type="String">
+                            <parameters>
+                                <parameter type="String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="displayClasses" return-type="void">
+                            <parameters>
+                                <parameter type="List"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public" name="parserDisplay" return-type="void"/>
+                        <method modifier="public" name="displayProject" return-type="void">
+                            <parameters>
+                                <parameter type="ProjectEntity"/>
+                            </parameters>
+                        </method>
+                    </methods>
+                    <relations>
+                        <relation relation-type="UTILISATION" source="ConsoleDisplay" target="List"/>
+                        <relation relation-type="UTILISATION" source="ConsoleDisplay" target="ClassEntity"/>
+                        <relation relation-type="UTILISATION" source="ConsoleDisplay" target="ProjectEntity"/>
+                    </relations>
+                </class>
+            </classes>
+        </package>
+        <package name="org.mql.java.xml">
+            <classes>
+                <class name="XmiGenerator">
+                    <methods>
+                        <method modifier="private static" name="createEnumElement" return-type="Element">
+                            <parameters>
+                                <parameter type="Document"/>
+                                <parameter type="ClassEntity"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="createClassElement" return-type="Element">
+                            <parameters>
+                                <parameter type="Document"/>
+                                <parameter type="ClassEntity"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="createFieldElement" return-type="Element">
+                            <parameters>
+                                <parameter type="Document"/>
+                                <parameter type="FieldType"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public static" name="generateProjectXmi" return-type="void">
+                            <parameters>
+                                <parameter type="ProjectEntity"/>
+                                <parameter type="String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="createAnnotationElement" return-type="Element">
+                            <parameters>
+                                <parameter type="Document"/>
+                                <parameter type="ClassEntity"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="createMethodElement" return-type="Element">
+                            <parameters>
+                                <parameter type="Document"/>
+                                <parameter type="MethodType"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="createRelationElement" return-type="Element">
+                            <parameters>
+                                <parameter type="Document"/>
+                                <parameter type="RelationEntity"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="createInterfaceElement" return-type="Element">
+                            <parameters>
+                                <parameter type="Document"/>
+                                <parameter type="ClassEntity"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="createPackageElement" return-type="Element">
+                            <parameters>
+                                <parameter type="Document"/>
+                                <parameter type="PackageEntity"/>
+                            </parameters>
+                        </method>
+                    </methods>
+                    <relations>
+                        <relation relation-type="UTILISATION" source="XmiGenerator" target="Document"/>
+                        <relation relation-type="UTILISATION" source="XmiGenerator" target="ClassEntity"/>
+                        <relation relation-type="UTILISATION" source="XmiGenerator" target="FieldType"/>
+                        <relation relation-type="UTILISATION" source="XmiGenerator" target="ProjectEntity"/>
+                        <relation relation-type="UTILISATION" source="XmiGenerator" target="MethodType"/>
+                        <relation relation-type="UTILISATION" source="XmiGenerator" target="RelationEntity"/>
+                        <relation relation-type="UTILISATION" source="XmiGenerator" target="PackageEntity"/>
+                    </relations>
+                </class>
+                <class name="XmlGenerator">
+                    <methods>
+                        <method modifier="private static" name="createEnumElement" return-type="Element">
+                            <parameters>
+                                <parameter type="Document"/>
+                                <parameter type="ClassEntity"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="createClassElement" return-type="Element">
+                            <parameters>
+                                <parameter type="Document"/>
+                                <parameter type="ClassEntity"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="createFieldElement" return-type="Element">
+                            <parameters>
+                                <parameter type="Document"/>
+                                <parameter type="FieldType"/>
+                            </parameters>
+                        </method>
+                        <method modifier="public static" name="generateProjectXml" return-type="void">
+                            <parameters>
+                                <parameter type="ProjectEntity"/>
+                                <parameter type="String"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="createAnnotationElement" return-type="Element">
+                            <parameters>
+                                <parameter type="Document"/>
+                                <parameter type="ClassEntity"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="createMethodElement" return-type="Element">
+                            <parameters>
+                                <parameter type="Document"/>
+                                <parameter type="MethodType"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="createRelationElement" return-type="Element">
+                            <parameters>
+                                <parameter type="Document"/>
+                                <parameter type="RelationEntity"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="createInterfaceElement" return-type="Element">
+                            <parameters>
+                                <parameter type="Document"/>
+                                <parameter type="ClassEntity"/>
+                            </parameters>
+                        </method>
+                        <method modifier="private static" name="createPackageElement" return-type="Element">
+                            <parameters>
+                                <parameter type="Document"/>
+                                <parameter type="PackageEntity"/>
+                            </parameters>
+                        </method>
+                    </methods>
+                    <relations>
+                        <relation relation-type="UTILISATION" source="XmlGenerator" target="Document"/>
+                        <relation relation-type="UTILISATION" source="XmlGenerator" target="ClassEntity"/>
+                        <relation relation-type="UTILISATION" source="XmlGenerator" target="FieldType"/>
+                        <relation relation-type="UTILISATION" source="XmlGenerator" target="ProjectEntity"/>
+                        <relation relation-type="UTILISATION" source="XmlGenerator" target="MethodType"/>
+                        <relation relation-type="UTILISATION" source="XmlGenerator" target="RelationEntity"/>
+                        <relation relation-type="UTILISATION" source="XmlGenerator" target="PackageEntity"/>
+                    </relations>
+                </class>
+            </classes>
+        </package>
+    </packages>
+</project>

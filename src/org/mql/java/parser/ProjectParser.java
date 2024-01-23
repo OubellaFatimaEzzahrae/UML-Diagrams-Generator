@@ -46,7 +46,6 @@ public class ProjectParser {
 	                        extractPackagesRecursively(file, packageEntities, projectPath, packageName);
 	                    }
 	                } else if (file.getName().endsWith(".java")) {
-	                	//System.out.println(file.getName());
 	                    // Fichier Java trouvé, ajouter le package uniquement s'il n'existe pas déjà
 	                    addPackageIfNotExists(packageEntities, currentPackage, projectPath);
 	                }
