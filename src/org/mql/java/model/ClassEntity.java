@@ -1,21 +1,22 @@
 package org.mql.java.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ClassEntity {
     private String name;
     private String type;
-    private List<MethodType> methods;
-    private List<FieldType> fields;
+    private List<MethodType> methods = new ArrayList<ClassEntity.MethodType>();
+    private List<FieldType> fields = new ArrayList<ClassEntity.FieldType>();
     private String superClasse;
-    private List<String> innerClasses;
-    private List<String> constructors;
-    private List<RelationEntity> relations;
+    private List<String> innerClasses = new ArrayList<String>();
+    private List<String> constructors = new ArrayList<String>();
+    private List<RelationEntity> relations = new ArrayList<RelationEntity>();
     
     //afficher les interfaces, annotations, ennums s'ils sont définit dans cette classe.
-    private List<String> interfaces;
-    private List<String> annotations; 
-    private List<String> ennumerations; 
+    private List<String> interfaces = new ArrayList<String>();
+    private List<String> annotations = new ArrayList<String>(); 
+    private List<String> ennumerations = new ArrayList<String>(); 
    
     
 	public ClassEntity(String name, List<MethodType> methods, List<FieldType> fields) {
@@ -120,6 +121,15 @@ public class ClassEntity {
         private String type;
         private String modifier;
         private List<String> annotations;
+        
+        public FieldType() {
+		}
+		
+        public FieldType(String name, String type, String modifier) {
+        	this.name = name;
+        	this.type = type;
+        	this.modifier = modifier;
+		}
 		public String getName() {
 			return name;
 		}
@@ -165,6 +175,18 @@ public class ClassEntity {
         private String returnType;
         private List<String> parameters;
         private List<String> annotations;
+        
+        
+        public MethodType() {
+		}
+        
+        public MethodType(String name, String modifier, String returnType , List<String> parameters) {
+        	this.name = name;
+        	this.modifier = modifier;
+        	this.returnType = returnType;
+        	this.parameters = parameters;
+		}        
+        
 		public String getName() {
 			return name;
 		}

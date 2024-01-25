@@ -4,7 +4,6 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.lang.reflect.Parameter;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -70,10 +69,10 @@ public class ClassParser{
 				mt.setName(m.getName());
 				mt.setModifier(Modifier.toString(m.getModifiers()));
 				mt.setReturnType(m.getReturnType().getSimpleName());
-	            Parameter[] parameters = m.getParameters();
+	            Class<?>[] parameters =  m.getParameterTypes();
 	            List<String> params = new ArrayList<>();
-	            for (Parameter parameter : parameters) {
-	                params.add(parameter.getType().getSimpleName());
+	            for (Class<?> parameter : parameters) {
+	                params.add(parameter.getTypeName().getClass().getSimpleName());
 	            }
 	            mt.setParameters(params);
 	            methodsType.add(mt);
@@ -95,9 +94,9 @@ public class ClassParser{
 		for(Constructor<?> f : constructors) {
 			StringBuilder result = new StringBuilder(Modifier.toString(f.getModifiers()));
 			result.append("\t"+className).append("(");
-            Parameter[] parameters = f.getParameters();
+            Class<?>[] parameters = f.getParameterTypes();
             for (int i = 0; i < parameters.length; i++) {
-                result.append(parameters[i].getType().getSimpleName()).append("");
+                result.append(parameters[i].getTypeName().getClass().getSimpleName()).append("");
                 if (i < parameters.length - 1) {
                     result.append(", ");
                 }

@@ -9,8 +9,6 @@ import org.mql.java.model.PackageEntity;
 import org.mql.java.model.ProjectEntity;
 import org.mql.java.model.RelationEntity;
 import org.mql.java.parser.ProjectParser;
-import org.mql.java.xml.XmiGenerator;
-import org.mql.java.xml.XmlGenerator;
 
 public class ConsoleDisplay {
 /*<<<<<<< HEAD
@@ -18,23 +16,19 @@ public class ConsoleDisplay {
 =======
 	
 >>>>>>> 0f448e7f89a57c89256f75690defd548b35ab1f2*/
-	public ConsoleDisplay() {
-		parserDisplay();
+	public ConsoleDisplay(String projectPath) {
+		parserDisplay(projectPath);
 
 	}
 	
-	public void parserDisplay() {
-		ProjectEntity projectE = ProjectParser.parseProject("D:\\mql\\java\\WorkSpace-Home\\Oubella FatimaEzzahrae-UML Diagrams Generator");
+	public static void parserDisplay(String projectPath) {
+		ProjectEntity projectE = ProjectParser.parseProject(projectPath);
 		displayProject(projectE);
 		
-		String xmlFilePath = "src\\resources\\outputXml.xml";
-		XmlGenerator.generateProjectXml(projectE, xmlFilePath);
-		
-	    String outputFilePath = "src\\resources\\outputXmi.xmi";
-	    XmiGenerator.generateProjectXmi(projectE, outputFilePath);
+
 	}
 	
-	public void displayProject(ProjectEntity projectE) {
+	public static void displayProject(ProjectEntity projectE) {
 		List<PackageEntity> packages = projectE.getPackages();
 		System.out.println("---------------------------------------------------------------");
         System.out.println("Nom du projet : " + projectE.getProjectName());
@@ -43,7 +37,7 @@ public class ConsoleDisplay {
 		System.out.println("_______________________________________________________________");
 	}
 	
-	public void displayPackages(List<PackageEntity>  packagesE) {
+	public static void displayPackages(List<PackageEntity>  packagesE) {
 		String marge = ">".repeat(2);
 		if (packagesE.isEmpty()) {
 			System.out.println("######Ouuups Empty Project!######");
@@ -52,16 +46,14 @@ public class ConsoleDisplay {
 				String packageName = packageE.getName();
 				System.out.println(marge+"Package : "+ packageName);
 				displayClasses(packageE.getAllFiles());
-				System.out.println("");
 			}
 		}
 	}
 	
-	public void displayClasses(List<ClassEntity> classesE) {
+	public static void displayClasses(List<ClassEntity> classesE) {
 	    String marge = " ".repeat(2);
-
 	    if (classesE.isEmpty()) {
-	        System.out.println(marge + "######  Empty Package!  ######");
+	        System.out.println(marge + "######  Empty Classe!  ######");
 	    } else {
 	        System.out.println(marge + "........ Classes||Interfaces||Enumerations||Annotations ........");
 
@@ -83,7 +75,7 @@ public class ConsoleDisplay {
 	}
 
 	// Filtrer les entités par type
-	private List<ClassEntity> filterEntitiesByType(List<ClassEntity> classes, String type) {
+	private static List<ClassEntity> filterEntitiesByType(List<ClassEntity> classes, String type) {
 	    return classes.stream()
 	            .filter(classEntity -> type.equals(classEntity.getType()))
 	            .collect(Collectors.toList());
@@ -91,7 +83,7 @@ public class ConsoleDisplay {
 
 
 	// Afficher les entités par type
-	private void displayEntitiesByType(List<ClassEntity> classes, String marge) {
+	private static void displayEntitiesByType(List<ClassEntity> classes, String marge) {
 	    for (ClassEntity classE : classes) {
 	        String className = classE.getName();
 	        System.out.println(marge.repeat(3) + ">>" + capitalize(classE.getType()) + " " + className + " : ");
@@ -100,12 +92,12 @@ public class ConsoleDisplay {
 	}
 
 	// Mettre en majuscule la première lettre
-	private String capitalize(String str) {
+	private static String capitalize(String str) {
 	    return str.substring(0, 1).toUpperCase() + str.substring(1);
 	}
 
 	
-	public void displayClassMembers(ClassEntity classE) {
+	public static void displayClassMembers(ClassEntity classE) {
 		String marge = " ".repeat(8);
 		//Fields
 		if(!classE.getFields().isEmpty()) {
@@ -138,7 +130,7 @@ public class ConsoleDisplay {
 			System.out.println(marge+"_______________________________");
 		}
 		//Relations
-		if(classE.getRelations() != null) {
+		if(!classE.getRelations().isEmpty()) {
 			System.out.println(marge+"__________Relations_________");
 			for (RelationEntity	r : classE.getRelations()) {
 				System.out.println(marge+r.getDescription());
